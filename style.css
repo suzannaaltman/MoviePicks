@@ -1,0 +1,97 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  width: 85%;
+}
+
+main {
+  display: none;
+}
+
+section {
+  display: none;
+  position: relative;
+  text-align: center;
+  clear: left;
+}
+
+h1 {
+  color: #559BA3;
+  padding-left: 200px;
+  text-align: center;
+}
+
+h2 {
+  color: #559BA3;
+  padding-left: 200px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+h3 {
+  padding-top: 40px;
+  padding-left: 284px;
+  position: block;
+  clear: left;
+  margin: 0 5px;
+  color: #55A36E;
+  font-size: 22px;
+}
+
+img {
+  position: inline;
+  float: left;
+  clear: both;
+  margin: 0 40px;
+  border: 4px groove gray;
+}
+
+p {
+  font-family: serif;
+  font-size: 18px;
+  color: #AEBDB2;
+}
+
+footer {
+  padding-top: 300px;
+}
+
+form {
+  padding-left: 200px;
+}
+
+input{
+  border-radius: 8px;
+}
+
+#submit {
+  background-color: #559BA3;
+  border-color: white;
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+}
+
+#removeLastHolder {
+  padding-left: 30px;
+  text-align: left;
+}
+
+#removeLast{
+  background-color: #559BA3;
+  border-color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+}
+
+#titleSearch {
+  width: 150px;
+}
+
+#yearSearch {
+  width: 50px;
+}
