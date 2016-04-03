@@ -7,9 +7,8 @@ $(function(){
     addMovie(response);
   })
 
-  $.get("http://www.omdbapi.com/?t=When+Harry+Met+Sally&y=&plot=full&r=json").done(function(response){
+  $.get("http://www.omdbapi.com/?t=Annie+Hall&y=&plot=full&r=json").done(function(response){
     addMovie(response);
-
 
   $("main, section").fadeIn("slow");
 
@@ -22,11 +21,11 @@ $(function(){
     var movieInfo = $("#addMovieSearch").serializeArray();
     var title = movieInfo[0].value;
     var year = movieInfo[1].value;
-    console.log(movieInfo);
-    // console.log("<a href=https://en.wikipedia.org/wiki/" + title + "></a>");
     $.get("http://www.omdbapi.com/?t=" + title + "&y=" + year + "&plot=full&r=json").done(function(response){
     addMovie(response);
+    console.log(response);
     });
+    $("div").fadeIn();
   });
 
   $("button").on("click", function(){
@@ -35,7 +34,19 @@ $(function(){
 
 
   function addMovie(response){
-    $("main").append("<div><h3>" + response.Title + "</h3><img src=" + response.Poster + " width=200px height=auto/><p>" + response.Year + "</p><p>" + response.Plot + "</p><div>");
+    $("main").append("<div><h3>" + response.Title + "</h3><img src=" + response.Poster +
+    " width=200px height=auto/><div class=\"stats\">" + response.Year +
+    "<br>Director: " + response.Director + "<br>Starring: " + response.Actors +
+    "</div><p>" + response.Plot + "</p><p><a href=\"http://www.imdb.com/title/" +
+    response.imdbID + "/\" target=\"_blank\">IMDB Entry</a></p></div>");
   };
 
+
+  function addMovie(response){
+    $("main").append("<div><h3>" + response.Title + "</h3><img src=" + response.Poster +
+    " width=200px height=auto/><div class=\"stats\">" + response.Year +
+    "<br>Director: " + response.Director + "<br>Starring: " + response.Actors +
+    "</div><p>" + response.Plot + "</p><p><a href=\"http://www.imdb.com/title/" +
+    response.imdbID + "/\" target=\"_blank\">IMDB Entry</a></p></div>");
+  };
 });
